@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Jorge\",\r\n    \"surname\": \"Peralta\",\r\n    \"username\": \"jperalta\",\r\n    \"email\": \"jperalta@kinal.edu.gt\",\r\n    \"password\": \"12345678\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Cristian\",\r\n    \"surname\": \"Rosas\",\r\n    \"username\": \"crosas\",\r\n    \"email\": \"crosas@kinal.edu.gt\",\r\n    \"password\": \"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -38,12 +38,12 @@
 			"response": []
 		},
 		{
-			"name": "VerPerfil",
+			"name": "ViewProfile",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/gestorComentarios/v1/users/findUser/67b661b41e7f159614ce1cd5",
+					"raw": "http://localhost:3001/gestorComentarios/v1/users/findUser/67b95554e9b5f5ae74757741",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -54,7 +54,101 @@
 						"v1",
 						"users",
 						"findUser",
-						"67b661b41e7f159614ce1cd5"
+						"67b95554e9b5f5ae74757741"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"kreyes@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/gestorComentarios/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorComentarios",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePassword",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"passwordOld\": \"12345678\",\r\n    \"passwordNew\": \"11111111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/gestorComentarios/v1/users/passwordUpdate/67b95554e9b5f5ae74757741",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorComentarios",
+						"v1",
+						"users",
+						"passwordUpdate",
+						"67b95554e9b5f5ae74757741"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jorge\",\r\n    \"surname\": \"Peralta\",\r\n    \"username\": \"jperalta\",\r\n    \"email\": \"jperalta@kinal.edu.gt\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/gestorComentarios/v1/users/67b95554e9b5f5ae74757741",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorComentarios",
+						"v1",
+						"users",
+						"67b95554e9b5f5ae74757741"
 					]
 				}
 			},
