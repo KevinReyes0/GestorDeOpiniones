@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "67bab5bb052102b351227687"
+  },
+  "keeperPublication": {
+    "$oid": "67ba6a41ab0903e4c0f6d512"
+  },
+  "comment": "Opino que el barcelona muy buen equipo y opta para ganar todo",
+  "keeperUser": {
+    "$oid": "67ba49c7748c181d82bbc2ae"
+  },
+  "state": true,
+  "createdAt": {
+    "$date": "2025-02-23T05:44:27.637Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T06:30:19.539Z"
+  }
+}]

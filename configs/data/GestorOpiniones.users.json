@@ -1,22 +1,5 @@
 [{
   "_id": {
-    "$oid": "67b94a4fe9b5f5ae7475773c"
-  },
-  "name": "Kevin",
-  "surname": "Reyes",
-  "email": "kreyes@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$eBBILVEW1BfOiQFcezveTw$XnDMjiKHKF676gAgiInS4fcDqE+PqZH1UmRvWPF2RBM",
-  "role": "ADMIN_ROLE",
-  "estado": true,
-  "createdAt": {
-    "$date": "2025-02-22T03:53:51.057Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-22T03:53:51.057Z"
-  }
-},
-{
-  "_id": {
     "$oid": "67b95554e9b5f5ae74757741"
   },
   "name": "Jorge",
@@ -25,29 +8,47 @@
   "email": "jperalta@kinal.edu.gt",
   "password": "$argon2id$v=19$m=65536,t=3,p=4$Kmd6LF1tcfWouLDsgODkSw$nKHGFL2uPC5kx/8uO/Fky/A/KDiVi2OFKYeS6zYsEZQ",
   "role": "NORMAL_ROLE",
-  "estado": true,
   "createdAt": {
     "$date": "2025-02-22T04:40:52.781Z"
   },
   "updatedAt": {
     "$date": "2025-02-22T06:19:16.081Z"
-  }
+  },
+  "state": true
 },
 {
   "_id": {
-    "$oid": "67b95752a755914e10fb5a05"
+    "$oid": "67ba49c7748c181d82bbc2ae"
   },
   "name": "Cristian",
   "surname": "Rosas",
   "username": "crosas",
   "email": "crosas@kinal.edu.gt",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$rDtBPWhk5ZFRmPM+Rik73A$8vdJ1uIjiG97vZnCflVEZm/o1JaVlTciAAhTsRPALoA",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ZCxVidZw1SzW60BVAwfKSw$8SnWkLq07CE/Ht9jTx+QwZmhs/xtEuRrSQMbSfmxuQs",
   "role": "NORMAL_ROLE",
-  "estado": true,
   "createdAt": {
-    "$date": "2025-02-22T04:49:22.926Z"
+    "$date": "2025-02-22T22:03:51.367Z"
   },
   "updatedAt": {
-    "$date": "2025-02-22T04:49:22.926Z"
-  }
+    "$date": "2025-02-22T22:03:51.367Z"
+  },
+  "state": true
+},
+{
+  "_id": {
+    "$oid": "67ba4fbc624cbd45a107182a"
+  },
+  "name": "Kevin",
+  "surname": "Reyes",
+  "username": "kreyes",
+  "email": "kreyes@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$p7qGI4RoTMrXkLQznib6Xw$xAVYsvqgf30TqdL3916z17fEpAUPzWyqzyE8JrnMqVc",
+  "role": "ADMIN_ROLE",
+  "createdAt": {
+    "$date": "2025-02-22T22:29:16.394Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T22:29:16.394Z"
+  },
+  "state": true
 }]

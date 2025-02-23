@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "67ba3c3d0c14238c7ba0167f"
+  },
+  "nameCategory": "Noticias",
+  "descriptionCategory": "Es un apartado para publicaciones sobre noticias nacionales",
+  "state": true,
+  "createdAt": {
+    "$date": "2025-02-22T21:06:05.437Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T23:18:04.047Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ba5432e9797dd3a27f5824"
+  },
+  "nameCategory": "Deportes",
+  "descriptionCategory": "Es una categoria para publicaciones de deportes",
+  "keeper": {
+    "$oid": "67ba4fbc624cbd45a107182a"
+  },
+  "state": true,
+  "createdAt": {
+    "$date": "2025-02-22T22:48:18.628Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T06:31:56.567Z"
+  }
+}]

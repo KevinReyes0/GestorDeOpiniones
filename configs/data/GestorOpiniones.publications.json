@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "67ba6a41ab0903e4c0f6d512"
+  },
+  "keeperCategory": {
+    "$oid": "67ba5432e9797dd3a27f5824"
+  },
+  "namePublication": "Barcelona primero",
+  "descriptionPublication": "El barcelona gana su partido contra las palmas y se coloca primero",
+  "keeperUser": {
+    "$oid": "67ba49c7748c181d82bbc2ae"
+  },
+  "state": true,
+  "createdAt": {
+    "$date": "2025-02-23T00:22:25.417Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T06:33:12.620Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ba9f9e85af83f46c63d97c"
+  },
+  "keeperCategory": {
+    "$oid": "67ba5432e9797dd3a27f5824"
+  },
+  "namePublication": "Domingo merengue",
+  "descriptionPublication": "El madrid tiene que ganar su partido para mantenerse en la pelea por el liderato de la liga",
+  "keeperUser": {
+    "$oid": "67ba49c7748c181d82bbc2ae"
+  },
+  "state": true,
+  "createdAt": {
+    "$date": "2025-02-23T04:10:06.499Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T04:31:06.636Z"
+  }
+}]
