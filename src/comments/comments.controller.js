@@ -1,14 +1,14 @@
 import { response } from "express";
-import Category from '../category/category.model.js';
 import User from '../users/user.model.js';
-import Publication from './publications.model.js'
+import Publication from '../publications/publications.model.js';
+import Comment from './comments.model.js'
 
-export const addPublication = async (req, res) => {
+export const addComment = async (req, res) => {
     try {
         
         const data = req.body;
 
-        const category = await Category.findOne({nameCategory: data.nameCategory});
+        const plubication = await Publication.findOne({namePublication: data.namePublication});
         const user = await User.findOne({email: data.email});   
 
         if(!user){
@@ -17,136 +17,136 @@ export const addPublication = async (req, res) => {
                 message: 'User not found',
                 error: error.message
             })
-        }if(!category){
+        }if(!plubication){
             return res.status(404).json({
                 succes: false,
-                message: 'Category not found',
+                message: 'plubication not found',
                 error: error.message
             })
         }
 
-        const publication = new Publication({
-            keeperCategory: category._id,
+        const comment = new Comment({
+            keeperPublication: plubication._id,
             ...data,
             keeperUser: user._id,
         });
 
-        await publication.save();
+        await comment.save();
 
         res.status(200).json({
             succes: true,
-            publication
+            comment
         });
 
     } catch (error) {
         res.status(500).json({
             succes: false,
-            msg: 'Error creating publication',
+            msg: 'Error creating comment',
             error: error.message
         })
     }
 }
 
-export const publicationsView = async (req, res) => {
+export const commentsView = async (req, res) => {
     const {limite = 10, desde = 0} = req.query;
     const query = {state: true};
 
     try {
         
 
-        const publications = await Publication.find(query)
-            .populate('keeperCategory', 'nameCategory')
-            .populate('keeperUser', 'username')
+        const comment = await Comment.find(query)
+            .populate({path: 'keeperPublication', match: { state: true }, select: 'namePublication' })
+            .populate({path: 'keeperUser', match: { state: true }, select: 'username' })
             .skip(Number(desde))
             .limit(Number(limite));
 
-        const total = await Publication.countDocuments(query);
+        const total = await Comment.countDocuments(query);
 
         res.status(200).json({
             succes: true,
             total,
-            publications
+            comment
         })
     } catch (error) {
         res.status(500).json({
             succes: false,
-            msg: 'Error getting publications',
+            msg: 'Error getting somment',
             error: error.message
         })
     }
 } 
 
-export const deletePublication = async (req, res) => {
+export const deleteComment = async (req, res) => {
 
     const { id } = req.params;
 
     try {
-        const publication = await Publication.findById(id);
+        const comment = await Comment.findById(id);
 
-        if (!publication) {
+        if (!comment) {
             return res.status(404).json({
                 succes: false,
-                message: 'Publication not found'
+                message: 'Comment not found'
             });
         }
 
-        if (publication.keeperUser.toString() !== req.usuario.id) {
+        if (comment.keeperUser.toString() !== req.usuario.id) {
             return res.status(404).json({
                 succes: false,
-                message: 'This post is not yours, so you cannot deleted it.'
+                message: 'This comment is not yours, so you cannot deleted it.'
             });
         }
 
-        await Publication.findByIdAndUpdate(id, {state: false});
+        await Comment.findByIdAndUpdate(id, {state: false});
 
         res.status(200).json({
             succes: true,
-            message: 'Publication deleted'
+            message: 'Comment deleted'
         })
 
     } catch (error) {
         res.status(500).json({
             succes: false,
-            msg: 'Error deleting publication',
+            msg: 'Error deleting comment',
             error: error.message
         })
     }
 }
 
 
-export const updatePublication = async (req, res  = response) => {
+export const updateComment = async (req, res  = response) => {
     try {
         const {id} = req.params;
-        const {_id, email, ...data} = req.body;
-        const publication1 = await Publication.findById(id);
+        const {_id, email, namePublication, ...data} = req.body;
+        const comment1 = await Comment.findById(id);
 
-        if (!publication1) {
+        if (!comment1) {
             return res.status(404).json({
                 succes: false,
-                message: 'Publication not found'
+                message: 'Comment not found'
             });
         }
 
-        if (publication1.keeperUser.toString() !== req.usuario.id) {
+        if (comment1.keeperUser.toString() !== req.usuario.id) {
             return res.status(404).json({
                 succes: false,
-                message: 'This post is not yours, so you cannot update it.'
+                message: 'This comment is not yours, so you cannot update it.'
             });
         }
 
-        const publication = await Publication.findByIdAndUpdate(id, data, {new: true});
+        const comment = await Comment.findByIdAndUpdate(id, data, {new: true});
 
         res.status(200).json({
             succes: true,
-            msj: 'Publication updated successfully',
-            publication
+            msj: 'Comment updated successfully',
+            comment
         })
 
     } catch (error) {
         res.status(500).json({
             succes: false,
-            msj: "Error updating publication",
+            msj: "Error updating comment",
             error: error.message
         })
     }
-} 
+}  

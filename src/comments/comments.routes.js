@@ -4,7 +4,7 @@ import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
 
-import { addPublication, publicationsView, deletePublication, updatePublication } from './publications.controller.js';
+import { addComment, commentsView, deleteComment, updateComment } from './comments.controller.js';
 
 const router = Router();
 
@@ -15,10 +15,11 @@ router.post(
         check('email', 'This is not a valid email').not().isEmpty(),
         validarCampos
     ],
-    addPublication
+    addComment
 );
 
-router.get("/", publicationsView);
+router.get("/", commentsView);
+
 
 router.delete(
     "/:id",
@@ -27,8 +28,9 @@ router.delete(
         check("id", "It is not a valid id").isMongoId(),
         validarCampos  
     ],
-    deletePublication
+    deleteComment
 );
+
 
 router.put(
     "/:id",
@@ -37,8 +39,9 @@ router.put(
         check("id", "It is not a valid id").isMongoId(),
         validarCampos 
     ],
-    updatePublication
+    updateComment
 );
+
     
 
 export default router;
