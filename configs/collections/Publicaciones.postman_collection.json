@@ -13,13 +13,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhNDljNzc0OGMxODFkODJiYmMyYWUiLCJpYXQiOjE3NDAyODM3MzEsImV4cCI6MTc0MDI4NzMzMX0.MTQbPfqxNOjnS6MBK1yf4CMEtTGQA8x2VFwNyhd1pFQ",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhNDljNzc0OGMxODFkODJiYmMyYWUiLCJpYXQiOjE3NDA1MjExOTYsImV4cCI6MTc0MDUyNDc5Nn0.i4lUy14Wls5xW9A8YikhpVSHHSCgL-Pz0_mZBDZOmOc",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nameCategory\": \"Deportes\",\r\n    \"namePublication\": \"Domingo blanco\",\r\n    \"descriptionPublication\": \"El madrid tiene que ganar su partido para mantenerse en la pelea por el liderato de la liga\",\r\n    \"email\": \"crosas@kinal.edu.gt\"\r\n}\r\n\r\n",
+					"raw": "{\r\n    \"nameCategory\": \"Deportes\",\r\n    \"namePublication\": \"Barcelona a la final de copa del rey\",\r\n    \"descriptionPublication\": \"El barcelona al eliminar al atletico pasa a finales de la copa del rey\",\r\n    \"email\": \"crosas@kinal.edu.gt\"\r\n}\r\n\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -72,12 +72,12 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhNDljNzc0OGMxODFkODJiYmMyYWUiLCJpYXQiOjE3NDAyOTIzNjUsImV4cCI6MTc0MDI5NTk2NX0.38uOz3SYCVXn28kmkODnrCrjnKUw33GC_guR7JVKmXw",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhNDljNzc0OGMxODFkODJiYmMyYWUiLCJpYXQiOjE3NDA1MjM1ODQsImV4cCI6MTc0MDUyNzE4NH0.Ag7rUtQnoCro1JmTfiU21m2BMfpeFzHeFL6BSxw9W_w",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3001/gestorComentarios/v1/publications/67ba6a41ab0903e4c0f6d512",
+					"raw": "http://localhost:3001/gestorComentarios/v1/publications/67be42788d03f8797e8f8197",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -87,7 +87,7 @@
 						"gestorComentarios",
 						"v1",
 						"publications",
-						"67ba6a41ab0903e4c0f6d512"
+						"67be42788d03f8797e8f8197"
 					]
 				}
 			},

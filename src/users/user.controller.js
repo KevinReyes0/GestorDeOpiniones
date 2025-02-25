@@ -36,9 +36,12 @@ export const updateUser = async (req, res  = response) => {
         const {id} = req.params;
         const {_id, password, email, ...data} = req.body;
 
-        if(password){
-            data.password = await hash(password)
-        }
+        if (password || email) {
+            return res.status(400).json({
+                success: false,
+                message: 'Cannot update password or email directly',
+            });
+        }   
 
         const user = await User.findByIdAndUpdate(id, data, {new: true});
 

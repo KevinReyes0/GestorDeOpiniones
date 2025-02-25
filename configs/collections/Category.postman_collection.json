@@ -13,7 +13,7 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhNGZiYzYyNGNiZDQ1YTEwNzE4MmEiLCJpYXQiOjE3NDAyNjM0ODQsImV4cCI6MTc0MDI2NzA4NH0.Tx8--hJI7m9ZYdhzyhKwcT-x5HnSE4_Bo-cfci6ry2A",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlMzdmNTVmMmE4ZTgzYWZiOTZmY2MiLCJpYXQiOjE3NDA1MjE0MzUsImV4cCI6MTc0MDUyNTAzNX0.pK2UzY0dxrVz1Yr4lGIvOSpgNSse2ZyAtTmqCwsUFC0",
 						"type": "text"
 					}
 				],
@@ -78,12 +78,12 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhNGZiYzYyNGNiZDQ1YTEwNzE4MmEiLCJpYXQiOjE3NDAyOTIyODUsImV4cCI6MTc0MDI5NTg4NX0.kqvhD4_Z2EXXO81AGbEhG4t3M-NPlTw4pfCIuf66pTU",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlMzdmNTVmMmE4ZTgzYWZiOTZmY2MiLCJpYXQiOjE3NDA1MjQxMjEsImV4cCI6MTc0MDUyNzcyMX0.YVXKIaJV5STd1s5Gz44A6tHZq4JvGz_rylXCG8BSxGA",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3001/gestorComentarios/v1/category/67ba5432e9797dd3a27f5824",
+					"raw": "http://localhost:3001/gestorComentarios/v1/category/67be4067b7195e46a7f023f9",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -93,7 +93,7 @@
 						"gestorComentarios",
 						"v1",
 						"category",
-						"67ba5432e9797dd3a27f5824"
+						"67be4067b7195e46a7f023f9"
 					],
 					"query": [
 						{
@@ -113,13 +113,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhNGZiYzYyNGNiZDQ1YTEwNzE4MmEiLCJpYXQiOjE3NDAyNjU5NzIsImV4cCI6MTc0MDI2OTU3Mn0.8kRF4pRS6PfpUxYt_nnh1fyC4sX_pfgDpuW3BkqIuMU",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlMzdmNTVmMmE4ZTgzYWZiOTZmY2MiLCJpYXQiOjE3NDA1MjI2NzUsImV4cCI6MTc0MDUyNjI3NX0.qVSRDTwzKP8bwhZUzTjhT_6IYaogIop2hHieCtCkrVI",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nameCategory\": \"Noticias\",\r\n    \"descriptionCategory\": \"Es un apartado para publicaciones sobre noticias nacionales\"\r\n}",
+					"raw": "{\r\n    \"nameCategory\": \"DEPORTES\",\r\n    \"descriptionCategory\": \"Es un apartado para publicaciones sobre noticias nacionales\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -127,7 +127,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/gestorComentarios/v1/category/67ba3c3d0c14238c7ba0167f",
+					"raw": "http://localhost:3001/gestorComentarios/v1/category/67be4067b7195e46a7f023f9",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -137,7 +137,7 @@
 						"gestorComentarios",
 						"v1",
 						"category",
-						"67ba3c3d0c14238c7ba0167f"
+						"67be4067b7195e46a7f023f9"
 					]
 				}
 			},

@@ -2,8 +2,7 @@ import { response } from "express";
 import Category from './category.model.js';
 import User from '../users/user.model.js';
 import Publication from '../publications/publications.model.js'
-
-const createCategory = async ( nameCategory, descriptionCategory, state) => {
+const createCategory = async ( nameCategory, descriptionCategory, keeperAdmin, state) => {
     try {
 
         if (nameCategory === "Noticias") {
@@ -19,7 +18,8 @@ const createCategory = async ( nameCategory, descriptionCategory, state) => {
     const newCategory = new Category({ 
         nameCategory,
         descriptionCategory, 
-        state});
+        state,
+        keeperAdmin});
         
         await newCategory.save();
         console.log("Category created successfully:", newCategory);
@@ -31,7 +31,7 @@ const createCategory = async ( nameCategory, descriptionCategory, state) => {
     }
 };
 
-createCategory("Noticias", "Es un apartado para opinar sobre noticias nacionales", true);
+createCategory("Noticias", "Es un apartado para opinar sobre noticias nacionales", "67be37f55f2a8e83afb96fcc", true);
 
 export const addCategory = async (req, res) => {
     try {
@@ -50,7 +50,7 @@ export const addCategory = async (req, res) => {
 
         const category = new Category({
             ...data,
-            keeper: user._id,
+            keeperAdmin: user._id,
         });
 
         await category.save();
@@ -76,7 +76,7 @@ export const categoryView = async (req, res) => {
     try {
         
         const category = await Category.find(query)
-            .populate({path: 'keeper', match: { status: true }, select: 'email' })
+            .populate({path: 'keeperAdmin', match: { status: true }, select: 'email' })
             .skip(Number(desde))
             .limit(Number(limite));
 
@@ -97,25 +97,33 @@ export const categoryView = async (req, res) => {
 } 
 
 export const deleteCategory = async (req, res) => {
-
-    const {id} = req.params;
+    const { id } = req.params;
 
     try {
-        await Category.findByIdAndUpdate(id, {state: false});
+        const defaultCategory = await Category.findOne({ nameCategory: "Noticias" });
+
+        if (!defaultCategory) {
+            return res.status(400).json({
+                success: false,
+                message: 'The default category "News" does not exist.',
+            });
+        }
+        await Publication.updateMany({ keeperCategory: id }, { keeperCategory: defaultCategory._id });
+
+        await Category.findByIdAndUpdate(id, { state: false });
 
         res.status(200).json({
-            succes: true,
-            message: 'Category deleted'
-        })
-
+            success: true,
+            message: 'Category disabled and posts reassigned to default category "News".',
+        });
     } catch (error) {
         res.status(500).json({
-            succes: false,
+            success: false,
             msg: 'Error deleting category',
-            error: error.message
-        })
+            error: error.message,
+        });
     }
-}
+};
 
 export const updateCategory = async (req, res  = response) => {
     try {

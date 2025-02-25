@@ -43,7 +43,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/gestorComentarios/v1/users/findUser/67b95554e9b5f5ae74757741",
+					"raw": "http://localhost:3001/gestorComentarios/v1/users/findUser/67ba49c7748c181d82bbc2ae",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -54,7 +54,7 @@
 						"v1",
 						"users",
 						"findUser",
-						"67b95554e9b5f5ae74757741"
+						"67ba49c7748c181d82bbc2ae"
 					]
 				}
 			},
@@ -67,7 +67,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"crosas@kinal.edu.gt\",\r\n    \"password\": \"12345678\"\r\n}",
+					"raw": "{\r\n    \"email\": \"kreyes@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -130,7 +130,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Jorge\",\r\n    \"surname\": \"Peralta\",\r\n    \"username\": \"jperalta\",\r\n    \"email\": \"jperalta@kinal.edu.gt\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Jorge\",\r\n    \"surname\": \"Peralta\",\r\n    \"username\": \"jperalta\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

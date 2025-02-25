@@ -11,7 +11,7 @@ const CategorySchema = Schema({
         required: [true, 'Category description required'],
         maxLength: [100, 'Cant be overcome 100 characters']
     },
-    keeper: {
+    keeperAdmin: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true

@@ -2,6 +2,7 @@ import { response } from "express";
 import Category from '../category/category.model.js';
 import User from '../users/user.model.js';
 import Publication from './publications.model.js'
+import Comment from '../comments/comments.model.js'
 
 export const addPublication = async (req, res) => {
     try {
@@ -58,6 +59,7 @@ export const publicationsView = async (req, res) => {
             Publication.find(query)
             .populate({path: 'keeperCategory', match: { state: true }, select: 'nameCategory' })
             .populate({path: 'keeperUser', match: { state: true }, select: 'username' })
+            .populate({path: 'keeperComment', match: { state: true }, select: 'comment' })
             .skip(Number(desde))
             .limit(Number(limite))
         ])
@@ -95,9 +97,11 @@ export const deletePublication = async (req, res) => {
                 succes: false,
                 message: 'This post is not yours, so you cannot deleted it.'
             });
-        }
+        }  
 
         await Publication.findByIdAndUpdate(id, {state: false});
+
+        await Comment.updateMany({ keeperPublication: id }, { state: false });
 
         res.status(200).json({
             succes: true,

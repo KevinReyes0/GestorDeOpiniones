@@ -22,6 +22,11 @@ const PublicationSchema = Schema({
         ref: 'User',
         required: true
     },
+    keeperComment: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Comments',
+        required: false
+    }],
     state: {
         type: Boolean,
         default: true,
